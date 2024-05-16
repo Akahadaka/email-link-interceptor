@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="dialog.css">
+</head>
+
+<body>
+  <div class="warning-container">
+    <div class="warning-icon">&#9888;</div>
+    <div class="warning-message">
+      <p>Look carefully at the domain you're about to visit</p>
+      <div class="url-display">
+        <span id="protocol"></span>
+        <span id="hostname"></span>
+        <span id="port"></span>
+        <span id="pathname"></span>
+        <span id="search"></span>
+        <span id="hash"></span>
+      </div>
+    </div>
+    <div class="action-bar">
+      <button id="cancel-button">Yikes! Nevermind</button>
+      <button id="continue-button">Continue to URL</button>
+    </div>
+  </div>
+  <script src="dialog.js"></script>
+</body>
+
+</html>

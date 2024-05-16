@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Email Link Interceptor",
+  "description": "Intercepts email links and lets you review the actual URL before proceeding to open them.",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "webNavigation"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.office365.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "dialog.html",
+        "dialog.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/link-16.png",
+      "48": "images/link-48.png",
+      "128": "images/link-128.png"
+    }
+  },
+  "icons": {
+    "16": "images/link-16.png",
+    "48": "images/link-48.png",
+    "128": "images/link-128.png"
+  }
+}
